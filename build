@@ -1,0 +1,8 @@
+echo "YACC:" $1".y" 
+echo "LEX :" $1".l"
+echo
+yacc -d $1".y"
+echo
+lex $1".l"
+echo
+gcc -o $1 y.tab.c lex.yy.c -lfl -lm
